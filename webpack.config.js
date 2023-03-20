@@ -32,6 +32,19 @@ module.exports = {
         test: /\.ts$/,
         loader: "ts-loader",
       },
+
+      // https://morioh.com/p/a21da773af39
+      {
+        test: /\.(png|jp(e*)g|svg|gif)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "images/[hash]-[name].[ext]",
+            },
+          },
+        ],
+      },
     ],
   },
 };
