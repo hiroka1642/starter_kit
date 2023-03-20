@@ -7,7 +7,7 @@
     "start": "webpack serve --mode=development",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "tsc": "tsc"
+    "tsc": "tsc -d"
   },
   "eslintConfig": {
     "extends": [
@@ -42,12 +42,14 @@
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.43.0",
+    "@typescript-eslint/parser": "^5.55.0",
     "eslint": "^8.0.1",
     "eslint-config-standard-with-typescript": "^34.0.1",
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-n": "^15.0.0",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.32.2",
+    "eslint-webpack-plugin": "^4.0.0",
     "typescript": "^5.0.2"
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
