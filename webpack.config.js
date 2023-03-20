@@ -1,4 +1,8 @@
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+
+// 本当は css のコンパイルにはこれを使う?
+// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   // モジュールバンドルを行う起点となるファイルの指定
   // 指定できる値としては、ファイル名の文字列や、それを並べた配列やオブジェクト
@@ -14,7 +18,7 @@ module.exports = {
     // モジュールバンドルを行った結果を出力する場所やファイル名の指定
     // "__dirname"はこのファイルが存在するディレクトリを表すnode.jsで定義済みの定数
     path: path.join(__dirname, "dist"),
-    filename: "[name].js", // [name]はentryで記述した名前(この例ではbundle）が入る
+    filename: "[name].js", // [name]はentryで記述した名前(今回は main）が入る
   },
   // モジュールとして扱いたいファイルの拡張子を指定する
   // 例えば「import Foo from './foo'」という記述に対して"foo.ts"という名前のファイルをモジュールとして探す
@@ -26,7 +30,7 @@ module.exports = {
   devServer: {
     // webpack-dev-serverの公開フォルダ
     static: {
-      directory: path.join(__dirname, "dist"),
+      directory: "index.html",
     },
   },
   // モジュールに適用するルールの設定（ここではローダーの設定を行う事が多い）
@@ -59,4 +63,11 @@ module.exports = {
       // sass を css へ置き換えるには sass-loader, node-sass を使用する
     ],
   },
+  plugins: [
+    // html を dist 配下に作成する
+    new HtmlWebpackPlugin({
+      //テンプレートに使用するhtmlファイルを指定
+      template: "./public/index.html",
+    }),
+  ],
 };

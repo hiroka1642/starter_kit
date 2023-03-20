@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "webpack --mode=development",
-    "start": "webpack serve --mode=development",
+    "start": "webpack serve --mode=development --open",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "tsc": "tsc -d"
@@ -53,6 +53,7 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-webpack-plugin": "^4.0.0",
+    "html-webpack-plugin": "^5.5.0",
     "style-loader": "^3.3.2",
     "typescript": "^5.0.2"
   },
