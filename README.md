@@ -69,7 +69,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-
 ###　エラー
 --jsx で怒られる
 https://zenn.dev/kaikii/articles/7f14be0586128d
@@ -80,3 +79,7 @@ https://akamist.com/blog/archives/
 
 https://qiita.com/toshi-toma/items/080b89000ed7f0242bee#2-webpack%E3%81%AE%E8%A8%AD%E5%AE%9Awebpackconfigjs
 
+### 参考サイト
+
+TypeScript + webpack
+https://www.true-fly.com/entry/2022/03/14/080000#typescript%E3%81%A8%E4%BB%96%E5%BF%85%E8%A6%81%E3%81%AA%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB
