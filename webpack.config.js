@@ -51,6 +51,12 @@ module.exports = {
           },
         ],
       },
+      // css-loader, style-loader を使って js に置き換える
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
+      // sass を css へ置き換えるには sass-loader, node-sass を使用する
     ],
   },
 };
