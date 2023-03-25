@@ -25,7 +25,8 @@ module.exports = {
   // デフォルトは['.js', '.json']
   resolve: {
     //https://qiita.com/toshi-toma/items/080b89000ed7f0242bee#2-webpack%E3%81%AE%E8%A8%AD%E5%AE%9Awebpackconfigjs
-    extensions: [".ts", ".tsx", ".js"],
+    // https://webpack.js.org/configuration/resolve/#resolveextensions
+    extensions: [".ts", ".tsx", ".js", ".jsx"],
   },
   devServer: {
     // webpack-dev-serverの公開フォルダ
