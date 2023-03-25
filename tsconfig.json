@@ -1,15 +1,22 @@
 {
   "compilerOptions": {
+    // https://zenn.dev/chida/articles/bdbcd59c90e2e1#target
+    //TypeScriptはJavaScriptにコンパイルされるため、その時にどのバージョンのJavaScriptで出力するかをtargetで指定します
     "target": "es2020",
+    // 出力されるJavaScriptが、どのようにモジュールを読み込むか指定します。バックエンドならcommonjs、フロントエンドならes2021やesnextを指定すると良さそう。
     "module": "esnext",
+    // targetに指定しているjsのバージョンには含まれていない、組み込みライブラリを使用する場合は、libに明示的な指定が必要になります。
     "lib": ["es2020", "dom"],
     "jsx": "react-jsx",
     // https://webpack.js.org/guides/typescript/#source-maps
     // https://webpack.js.org/guides/development/#using-source-maps
+    // trueを指定することで、出力されたJavaScriptファイルが実際に動作させるとき、デバッガーが元のTypeScriptソースファイルを表示できるようします。
     "sourceMap": true,
     "outDir": "./dist",
     // TypeScriptのソースコードがあるディレクトリを指定する。
     "rootDir": "./src",
+    // https://zenn.dev/chida/articles/bdbcd59c90e2e1#strict
+    // 複数のオプションが true になる
     "strict": true,
     "moduleResolution": "node",
     // module のインポート時に起点となるディレクトリを指定できる設定です。
@@ -18,9 +25,14 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "skipLibCheck": true,
+    // ファイルの文字列の大文字小文字を区別するかどうかを指定します。OSによっては、大文字小文字を区別出来ない場合があるため、trueにしておくと良さそうです。
     "forceConsistentCasingInFileNames": true,
-    "typeRoots": ["types", "node_modules/@types"]
+    "typeRoots": ["types", "node_modules/@types"],
+    // interfaceなど型の定義だけを持つのファイルのインポートは、import typeでインポートしないと、コンパイルエラーにします。
+    // typescript v5.5 から非推奨になるため、それからは verbatimModuleSyntax を使用する
+    "importsNotUsedAsValues": "error"
   },
+  //コンパイルする対象ファイルを記述する。
   "include": ["./src/**/*", "src/custom.d.ts"],
   "exclude": ["dist", "node_modules"],
   "compileOnSave": false
