@@ -1,7 +1,8 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-// 本当は css のコンパイルにはこれを使う?
+// TODO: mode によってファイルを分ける
+// TODO: 本当は css のコンパイルにはこれを使う?
 // const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   // モジュールバンドルを行う起点となるファイルの指定
@@ -39,11 +40,11 @@ module.exports = {
     rules: [
       {
         // 拡張子が.tsxで終わるファイルに対して、TypeScriptコンパイラを適用する
+        // これを使う場合は、 tsc でコンパイルする必要はなくなる？
         // https://qiita.com/toshi-toma/items/080b89000ed7f0242bee#2-webpack%E3%81%AE%E8%A8%AD%E5%AE%9Awebpackconfigjs
         test: /\.tsx?$/,
         loader: "ts-loader",
       },
-
       // https://morioh.com/p/a21da773af39
       {
         test: /\.(png|jp(e*)g|svg|gif)$/,
@@ -61,14 +62,20 @@ module.exports = {
         test: /\.css$/,
         use: ["style-loader", "css-loader"],
       },
-      // sass を css へ置き換えるには sass-loader, node-sass を使用する
+      // TODO: sass を css へ置き換えるには sass-loader, node-sass を使用する
     ],
   },
   plugins: [
     // html を dist 配下に作成する
     new HtmlWebpackPlugin({
       //テンプレートに使用するhtmlファイルを指定
-      template: "./public/index.html",
+      // path.resolve(): 絶対パスを返す。引数の後ろから順に評価、結合していく。
+      template: path.resolve(__dirname, "public", "index.html"),
+      // favicon も一緒に bundle する
+      favicon: "./public/favicon.ico",
+      filename: "index.html",
+      // manifest.json とは: manifest.json を編集することでスマートフォン等で「ホーム画面に追加」した際のアイコンやUI等に関する設定をすることができる。
+      manifest: "./public/manifest.json",
     }),
   ],
 };
