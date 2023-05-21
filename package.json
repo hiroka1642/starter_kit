@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "build": "webpack --mode=development",
+    "build-babel": "babel src -d lib",
     "start": "webpack serve --mode=development --open",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -43,6 +44,9 @@
     "webpack-dev-server": "^4.13.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.21.5",
+    "@babel/core": "^7.21.8",
+    "@babel/preset-env": "^7.21.5",
     "@typescript-eslint/eslint-plugin": "^5.43.0",
     "@typescript-eslint/parser": "^5.55.0",
     "css-loader": "^6.7.3",

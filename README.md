@@ -103,6 +103,8 @@ Webpack の役割
 
 Babel の役割
 
+- https://babeljs.io/docs/usage
+
 JavaScript を別の javaScript へ置き換える
 新しいバージョンで書いたコードを古い環境でも使えるようにする
 
