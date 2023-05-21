@@ -95,11 +95,16 @@ Field 'browser' doesn't contain a valid alias configuration が出る時[React]
 
 Webpack の役割
 
-> webpackは指定されたファイルを起点として、そこからimport文を頼りに芋づる式にファイルを繋げてゆき、一つにまとめたJavaScriptファイルを出力します。
+> webpack は指定されたファイルを起点として、そこから import 文を頼りに芋づる式にファイルを繋げてゆき、一つにまとめた JavaScript ファイルを出力します。
 > このまとめる処理はバンドル(bundle)と呼ばれています。（束ねるの意）そしてバンドルを行うツールはバンドラーと呼ばれています。
-> ポイントは、“基本機能はあくまで一つのJavaScriptファイルにまとめる”というところです。
+> ポイントは、“基本機能はあくまで一つの JavaScript ファイルにまとめる”というところです。
 
 参考: https://qiita.com/koedamon/items/3e64612d22f3473f36a4#webpack%E3%81%AE%E5%BD%B9%E5%89%B2
+
+Babel の役割
+
+JavaScript を別の javaScript へ置き換える
+新しいバージョンで書いたコードを古い環境でも使えるようにする
 
 ### その他参考サイト
 
