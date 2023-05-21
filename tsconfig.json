@@ -1,4 +1,8 @@
 {
+  // オプションについて
+  // https://zenn.dev/unemployed/articles/typescript-compiler-options
+  // https://qiita.com/ryokkkke/items/390647a7c26933940470
+  
   "compilerOptions": {
     // https://zenn.dev/chida/articles/bdbcd59c90e2e1#target
     //TypeScriptはJavaScriptにコンパイルされるため、その時にどのバージョンのJavaScriptで出力するかをtargetで指定します
@@ -29,11 +33,12 @@
     "forceConsistentCasingInFileNames": true,
     "typeRoots": ["types", "node_modules/@types"],
     // interfaceなど型の定義だけを持つのファイルのインポートは、import typeでインポートしないと、コンパイルエラーにします。
-    // typescript v5.5 から非推奨になるため、それからは verbatimModuleSyntax を使用する
-    "importsNotUsedAsValues": "error"
+    // importsNotUsedAsValues は typescript v5.5 から非推奨になるため、それからは verbatimModuleSyntax を使用する
+    "verbatimModuleSyntax": true
   },
   //コンパイルする対象ファイルを記述する。
   "include": ["./src/**/*", "src/custom.d.ts"],
+  // include で指定したファイルから特別に除外するファイルを記述する。
   "exclude": ["dist", "node_modules"],
   "compileOnSave": false
 }
